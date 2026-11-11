@@ -63,8 +63,8 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1r
 body,
 .site-header,
 .gallery figure {
-  background-color: #f0f1f3;
+  background-color: #c3c6cb;
 }
 .gallery-section {
-  background-color: #e1e4e8;
+  background-color: #adb3bb;
 }
