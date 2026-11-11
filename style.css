@@ -59,3 +59,12 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1r
   .site-header { flex-direction: column; align-items: flex-start; }
   nav { justify-content: flex-start; }
 }
+
+body,
+.site-header,
+.gallery figure {
+  background-color: #f0f1f3;
+}
+.gallery-section {
+  background-color: #e1e4e8;
+}
