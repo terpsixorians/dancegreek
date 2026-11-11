@@ -121,3 +121,16 @@
   from { opacity: .65; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+.hero-scroll + .about { padding-block-start: clamp(1.5rem, 4vw, 3rem); }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-height: 570px) {
+    .hero-scroll { min-height: 0; }
+    .hero-scroll .hero { position: relative; }
+    .hero-scroll .hero-photo > img:first-child { animation-range: exit 0% exit 65%; }
+    .hero-scroll .hero-photo .hero-performance { animation-range: exit 0% exit 65%; }
+    .hero-scroll .hero-content .scroll-cue { animation-range: exit 0% exit 40%; }
+  }
+}
