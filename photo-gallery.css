@@ -1,0 +1,42 @@
+.archive-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.archive-toggle, .photo-dialog button {
+  border: 1px solid currentColor;
+  border-radius: .25rem;
+  padding: .5rem .75rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.archive-toggle:focus-visible, .photo-dialog button:focus-visible {
+  outline: 3px solid #bc7e13;
+  outline-offset: 3px;
+}
+.photo-dialog {
+  width: min(900px, 94vw);
+  max-height: 94dvh;
+  padding: clamp(.75rem, 3vw, 1.75rem);
+  border: 0;
+  border-radius: .4rem;
+  background: #f4f5f6;
+  color: var(--ink);
+}
+.photo-dialog::backdrop { background: rgb(0 0 0 / 78%); }
+.album-heading, .album-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+}
+.album-heading { margin-bottom: .75rem; }
+.album-heading h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+.album-photo {
+  height: min(54dvh, 560px);
+  object-fit: contain;
+  background: #20252c;
+}
+.album-count { margin-block: .5rem; }
+.album-thumbnails { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .75rem; }
+.album-thumbnails button { padding: 2px; width: clamp(3.75rem, 13vw, 6rem); }
+.album-thumbnails button[aria-current="true"] { outline: 2px solid var(--blue); outline-offset: 1px; }
+.album-thumbnails img { aspect-ratio: 4/3; object-fit: cover; }

@@ -6,6 +6,8 @@
   <meta name="description" content="TerpsiXorians, the Hellenic Dance Group of New Jersey. Explore Greek folk dance, traditional dress, performances, and lessons.">
   <title>TerpsiXorians | Hellenic Dance Group of New Jersey</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="photo-gallery.css">
+  <script src="photo-gallery.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -39,14 +41,17 @@
     <section class="gallery-section" id="gallery">
       <div class="section">
         <p class="label">Photo archive</p>
-        <h2>TerpsiXorians in pictures</h2>
+        <div class="archive-heading">
+          <h2>TerpsiXorians in pictures</h2>
+          <button class="archive-toggle" type="button" hidden>Pause previews</button>
+        </div>
         <div class="gallery">
-          <a href="outdoor-dance.webp"><figure><img src="outdoor-dance.webp" alt="Dancer leaping during an outdoor performance" loading="lazy"><figcaption>Outdoor performance</figcaption></figure></a>
-          <a href="stage.webp"><figure><img src="stage.webp" alt="A line of dancers performing on a lit dance floor" loading="lazy"><figcaption>On stage</figcaption></figure></a>
-          <a href="costumes.webp"><figure><img src="costumes.webp" alt="Dancers seated together in colorful traditional dress" loading="lazy"><figcaption>Traditional dress</figcaption></figure></a>
-          <a href="line-dance.webp"><figure><img src="line-dance.webp" alt="Dancers holding hands in a line outdoors" loading="lazy"><figcaption>Dancing together</figcaption></figure></a>
-          <a href="group-portrait.webp"><figure><img src="group-portrait.webp" alt="TerpsiXorians ensemble posing for a group portrait" loading="lazy"><figcaption>Group portrait</figcaption></figure></a>
-          <a href="performance.webp"><figure><img src="performance.webp" alt="A costumed dancer performing in front of an audience" loading="lazy"><figcaption>In performance</figcaption></figure></a>
+          <a class="gallery-card" href="outdoor-dance.webp"><figure><img src="outdoor-dance.webp" alt="Dancer leaping during an outdoor performance" loading="lazy"><figcaption>Outdoor performance</figcaption></figure></a>
+          <a class="gallery-card" href="stage.webp"><figure><img src="stage.webp" alt="A line of dancers performing on a lit dance floor" loading="lazy"><figcaption>On stage</figcaption></figure></a>
+          <a class="gallery-card" href="costumes.webp"><figure><img src="costumes.webp" alt="Dancers seated together in colorful traditional dress" loading="lazy"><figcaption>Traditional dress</figcaption></figure></a>
+          <a class="gallery-card" href="line-dance.webp"><figure><img src="line-dance.webp" alt="Dancers holding hands in a line outdoors" loading="lazy"><figcaption>Dancing together</figcaption></figure></a>
+          <a class="gallery-card" href="group-portrait.webp"><figure><img src="group-portrait.webp" alt="TerpsiXorians ensemble posing for a group portrait" loading="lazy"><figcaption>Group portrait</figcaption></figure></a>
+          <a class="gallery-card" href="performance.webp"><figure><img src="performance.webp" alt="A costumed dancer performing in front of an audience" loading="lazy"><figcaption>In performance</figcaption></figure></a>
         </div>
       </div>
     </section>
@@ -69,6 +74,19 @@
       </div>
     </section>
   </main>
+  <dialog class="photo-dialog" aria-labelledby="album-title">
+    <div class="album-heading">
+      <h2 id="album-title"></h2>
+      <form method="dialog"><button type="submit" autofocus>Close</button></form>
+    </div>
+    <img class="album-photo" alt="">
+    <div class="album-controls">
+      <button type="button" data-step="-1">Previous</button>
+      <p class="album-count" aria-live="polite"></p>
+      <button type="button" data-step="1">Next</button>
+    </div>
+    <div class="album-thumbnails" aria-label="Photos in this gallery"></div>
+  </dialog>
   <footer><span>TerpsiXorians · Hellenic Dance Group of New Jersey</span><a href="#home">Back to top ↑</a></footer>
 </body>
 </html>
