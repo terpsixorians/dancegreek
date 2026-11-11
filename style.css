@@ -61,10 +61,14 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1r
 }
 
 body,
-.site-header,
 .gallery figure {
   background-color: #c3c6cb;
 }
 .gallery-section {
   background-color: #adb3bb;
+}
+.site-header,
+footer {
+  background-color: #333333;
+  color: #ffffff;
 }
