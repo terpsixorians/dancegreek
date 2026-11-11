@@ -1,3 +1,26 @@
+.hero-scroll .hero-content {
+  padding-block: 1.25rem;
+}
+
+.hero-scroll .hero-content > p:not(.label):not(.scroll-cue) {
+  margin: .65rem 0 1rem;
+}
+
+@media (min-width: 741px) {
+  .hero-scroll .hero { min-height: 245px; }
+  .hero-scroll .hero-photo > img:first-child {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+@media (max-width: 740px) {
+  .hero-scroll .hero-photo > img:first-child {
+    height: 23svh;
+    object-fit: cover;
+  }
+}
+
 .hero-photo .hero-performance,
 .scroll-cue {
   display: none;
@@ -6,7 +29,7 @@
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) and (min-height: 570px) {
     .hero-scroll {
-      min-height: 190svh;
+      min-height: 140svh;
       view-timeline-name: --hero-scroll;
       view-timeline-axis: block;
     }
@@ -14,14 +37,14 @@
     .hero-scroll .hero {
       position: sticky;
       top: 0;
-      min-height: 100svh;
+      min-height: 50svh;
     }
 
     .hero-scroll .hero-photo {
       overflow: hidden;
     }
 
-    .hero-scroll .hero-photo img {
+    .hero-scroll .hero-photo > img {
       height: 100%;
       object-fit: cover;
     }
@@ -41,11 +64,11 @@
       animation-range: contain 12% contain 80%;
     }
 
-    .hero-scroll .scroll-cue {
+    .hero-scroll .hero-content .scroll-cue {
       display: flex;
       align-items: center;
       gap: .6rem;
-      margin: 1.5rem 0 0;
+      margin: .65rem 0 0;
       color: #e4e1d9;
       font-size: .8rem;
       letter-spacing: .08em;
@@ -69,12 +92,13 @@
     .hero-scroll .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      grid-template-rows: minmax(0, 46svh) auto;
+      grid-template-rows: minmax(0, 23svh) auto;
       align-content: start;
     }
 
     .hero-scroll .hero-photo { grid-column: 1; grid-row: 1; }
-    .hero-scroll .hero-content { grid-column: 1; grid-row: 2; padding-bottom: 1.5rem; }
+    .hero-scroll .hero-photo > img:first-child { height: 100%; }
+    .hero-scroll .hero-content { grid-column: 1; grid-row: 2; padding-bottom: 1rem; }
   }
 }
 
