@@ -46,6 +46,7 @@ p { max-width: 56ch; }
 .gallery figcaption { padding: .75rem 1rem; font-weight: 700; }
 .gallery a:hover figcaption { text-decoration: underline; }
 .contact { background: var(--navy); color: var(--ivory); }
+.contact h2 { font-size: clamp(1.1rem, 2.5vw, 2.175rem); }
 .contact p:not(.label) { margin: 1.2rem 0 1.75rem; }
 footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.2rem max(5vw, 1rem); font-size: .85rem; }
 @media (max-width: 740px) {
