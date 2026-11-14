@@ -1,7 +1,7 @@
 .site-footer { display: block; padding-block: 2rem; padding-inline-end: max(5vw, 4rem); }
 .footer-columns { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: 1120px; margin-inline: auto; }
 .footer-columns > * { padding: .35rem 1.5rem; }
-.footer-columns > :first-child { padding-inline-start: 0; }
+.footer-columns { text-align: center; }
 .footer-columns > * + * { border-inline-start: 1px solid #777; }
 .footer-columns address { font-style: normal; overflow-wrap: anywhere; }
 .footer-social { display: flex; gap: .6rem; margin-top: .65rem; }
@@ -16,3 +16,6 @@
 .footer-social span:first-child { font-size: 0; }
 .footer-social span:first-child::before { content: ""; width: .62rem; height: .62rem; border: 1px solid currentColor; border-radius: .24rem; grid-area: 1 / 1; }
 .footer-social span:first-child::after { content: ""; width: .24rem; height: .24rem; border: 1px solid currentColor; border-radius: 50%; grid-area: 1 / 1; }
+
+.footer-social { justify-content: center; }
+.footer-social span { border-radius: 50%; }
