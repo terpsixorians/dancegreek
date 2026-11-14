@@ -1,62 +1,226 @@
 const additionalPhotos = [
   [
     {
-      "src": "archive-7.webp",
-      "alt": "Dancers performing on an outdoor stage"
+      "src": "dg02.webp",
+      "alt": "1994 - 2004 archive photo 2"
     },
     {
-      "src": "archive-11.webp",
-      "alt": "Two dancers performing outdoors"
+      "src": "dg03.webp",
+      "alt": "1994 - 2004 archive photo 3"
+    },
+    {
+      "src": "dg04.webp",
+      "alt": "1994 - 2004 archive photo 4"
+    },
+    {
+      "src": "dg05.webp",
+      "alt": "1994 - 2004 archive photo 5"
+    },
+    {
+      "src": "dg06.webp",
+      "alt": "1994 - 2004 archive photo 6"
+    },
+    {
+      "src": "dg07.webp",
+      "alt": "1994 - 2004 archive photo 7"
+    },
+    {
+      "src": "dg08.webp",
+      "alt": "1994 - 2004 archive photo 8"
+    },
+    {
+      "src": "dg09.webp",
+      "alt": "1994 - 2004 archive photo 9"
+    },
+    {
+      "src": "dg10.webp",
+      "alt": "1994 - 2004 archive photo 10"
+    },
+    {
+      "src": "dg11.webp",
+      "alt": "1994 - 2004 archive photo 11"
+    },
+    {
+      "src": "dg12.webp",
+      "alt": "1994 - 2004 archive photo 12"
+    },
+    {
+      "src": "dg13.webp",
+      "alt": "1994 - 2004 archive photo 13"
+    },
+    {
+      "src": "dg14.webp",
+      "alt": "1994 - 2004 archive photo 14"
+    },
+    {
+      "src": "dg15.webp",
+      "alt": "1994 - 2004 archive photo 15"
+    },
+    {
+      "src": "dg16.webp",
+      "alt": "1994 - 2004 archive photo 16"
+    },
+    {
+      "src": "dg17.webp",
+      "alt": "1994 - 2004 archive photo 17"
+    },
+    {
+      "src": "dg18.webp",
+      "alt": "1994 - 2004 archive photo 18"
+    },
+    {
+      "src": "dg19.webp",
+      "alt": "1994 - 2004 archive photo 19"
+    },
+    {
+      "src": "dg20.webp",
+      "alt": "1994 - 2004 archive photo 20"
+    },
+    {
+      "src": "dg21.webp",
+      "alt": "1994 - 2004 archive photo 21"
+    },
+    {
+      "src": "dg22.webp",
+      "alt": "1994 - 2004 archive photo 22"
+    },
+    {
+      "src": "dg23.webp",
+      "alt": "1994 - 2004 archive photo 23"
     }
   ],
   [
     {
-      "src": "archive-9.webp",
-      "alt": "Dancers performing on a lit stage"
+      "src": "dg25.webp",
+      "alt": "2005-2014 archive photo 2"
     },
     {
-      "src": "archive-24.webp",
-      "alt": "A dancer leaping on stage"
+      "src": "dg26.webp",
+      "alt": "2005-2014 archive photo 3"
+    },
+    {
+      "src": "dg27.webp",
+      "alt": "2005-2014 archive photo 4"
+    },
+    {
+      "src": "dg28.webp",
+      "alt": "2005-2014 archive photo 5"
+    },
+    {
+      "src": "dg29.webp",
+      "alt": "2005-2014 archive photo 6"
+    },
+    {
+      "src": "dg30.webp",
+      "alt": "2005-2014 archive photo 7"
+    },
+    {
+      "src": "dg31.webp",
+      "alt": "2005-2014 archive photo 8"
     }
   ],
   [
     {
-      "src": "archive-0.webp",
-      "alt": "Dancers wearing patterned traditional dress"
+      "src": "dg33.webp",
+      "alt": "2015- archive photo 2"
     },
     {
-      "src": "archive-38.webp",
-      "alt": "Two dancers in embroidered clothing and headscarves"
+      "src": "dg34.webp",
+      "alt": "2015- archive photo 3"
+    },
+    {
+      "src": "dg35.webp",
+      "alt": "2015- archive photo 4"
+    },
+    {
+      "src": "dg36.webp",
+      "alt": "2015- archive photo 5"
+    },
+    {
+      "src": "dg37.webp",
+      "alt": "2015- archive photo 6"
+    },
+    {
+      "src": "dg38.webp",
+      "alt": "2015- archive photo 7"
+    },
+    {
+      "src": "dg39.webp",
+      "alt": "2015- archive photo 8"
+    },
+    {
+      "src": "dg40.webp",
+      "alt": "2015- archive photo 9"
+    },
+    {
+      "src": "dg41.webp",
+      "alt": "2015- archive photo 10"
+    },
+    {
+      "src": "dg42.webp",
+      "alt": "2015- archive photo 11"
+    },
+    {
+      "src": "dg43.webp",
+      "alt": "2015- archive photo 12"
+    },
+    {
+      "src": "dg44.webp",
+      "alt": "2015- archive photo 13"
+    },
+    {
+      "src": "dg45.webp",
+      "alt": "2015- archive photo 14"
     }
   ],
   [
     {
-      "src": "archive-35.webp",
-      "alt": "A line of dancers holding hands indoors"
+      "src": "dg47.webp",
+      "alt": "Misc archive photo 2"
     },
     {
-      "src": "archive-30.webp",
-      "alt": "Dancers moving together across a stage"
+      "src": "dg48.webp",
+      "alt": "Misc archive photo 3"
+    },
+    {
+      "src": "dg49.webp",
+      "alt": "Misc archive photo 4"
+    },
+    {
+      "src": "dg50.webp",
+      "alt": "Misc archive photo 5"
     }
   ],
   [
     {
-      "src": "archive-45.webp",
-      "alt": "The ensemble gathered in traditional dress"
+      "src": "dg52.webp",
+      "alt": "Studio Photos archive photo 2"
     },
     {
-      "src": "archive-70.webp",
-      "alt": "A TerpsiXorians group portrait outdoors"
+      "src": "dg53.webp",
+      "alt": "Studio Photos archive photo 3"
+    },
+    {
+      "src": "dg54.webp",
+      "alt": "Studio Photos archive photo 4"
+    },
+    {
+      "src": "dg55.webp",
+      "alt": "Studio Photos archive photo 5"
     }
   ],
   [
     {
-      "src": "archive-17.webp",
-      "alt": "A dancer performing before a seated audience"
+      "src": "dg57.webp",
+      "alt": "Workshops archive photo 2"
     },
     {
-      "src": "archive-55.webp",
-      "alt": "Dancers performing a lift in a gymnasium"
+      "src": "dg58.webp",
+      "alt": "Workshops archive photo 3"
+    },
+    {
+      "src": "dg59.webp",
+      "alt": "Workshops archive photo 4"
     }
   ]
 ];
@@ -103,6 +267,7 @@ for (const card of cards) {
       button.setAttribute('aria-label', `Show photo ${index + 1}: ${photo.alt}`);
       const image = document.createElement('img');
       image.src = photo.src;
+      image.loading = 'lazy';
       image.alt = '';
       button.append(image);
       button.addEventListener('click', () => showPhoto(index));
