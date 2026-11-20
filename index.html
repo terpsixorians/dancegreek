@@ -11,6 +11,20 @@
   <link rel="stylesheet" href="photo-gallery.css">
   <link rel="stylesheet" href="scroll-story.css">
   <script src="photo-gallery.js" defer></script>
+  <style>
+    .contact-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+    .contact-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: center; }
+    .contact-card { display: block; border: 1px solid #c4a45e; box-shadow: 0 10px 30px #0004; cursor: zoom-in; }
+    .contact-card img { display: block; width: 100%; height: auto; }
+    .card-dialog { width: min(94vw, 1050px); max-width: none; max-height: 94dvh; padding: 1rem; border: 1px solid #c4a45e; background: #10243f; color: white; }
+    .card-dialog::backdrop { background: #000d; }
+    .card-dialog-header, .card-dialog-controls { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .card-dialog-header h2 { font: 600 1.1rem/1.4 "Instrument Sans", Arial, sans-serif; }
+    .card-dialog button { padding: .5rem .8rem; border: 1px solid #c4a45e; background: transparent; color: white; font: inherit; cursor: pointer; }
+    .card-dialog-image { width: 100%; height: min(72dvh, 950px); object-fit: contain; margin: .8rem 0; touch-action: pan-y pinch-zoom; }
+    .card-dialog-count { margin: 0; }
+    @media (max-width: 740px) { .contact-layout { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -63,7 +77,8 @@
       </div>
     </section>
     <section class="contact" id="contact">
-      <div class="section">
+      <div class="section contact-layout">
+        <div>
         <p class="label">Contact Us</p>
         <h2>Dance Greek with Us</h2>
         <p>Join our group</p>
@@ -72,6 +87,11 @@
         <h2>Dance Greek Lessons</h2>
         <p>Learn to Greek Dance</p>
         <a class="button" href="mailto:terpsixorians@gmail.com">Email TerpsiXorians <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-cards" aria-label="TerpsiXorians information cards">
+          <a href="terps-card-2026-front.jpg" class="contact-card" aria-label="Expand TerpsiXorians promotional card" aria-haspopup="dialog"><img src="terps-card-2026-front.jpg" alt="TerpsiXorians promotional card with dancers and contact information" loading="lazy" width="1200" height="1800"></a>
+          <a href="terps-card-2026-back.jpg" class="contact-card" aria-label="Expand TerpsiXorians invitation card" aria-haspopup="dialog"><img src="terps-card-2026-back.jpg" alt="TerpsiXorians invitation to join the group or book a performance" loading="lazy" width="1275" height="1875"></a>
+        </div>
       </div>
     </section>
   </main>
@@ -109,5 +129,53 @@
       <p style="max-width: none; margin: 1.5rem 0 0; text-align: center;"><small>&copy; 2026 Terpsixorians Hellenic Dance Group of NJ</small></p>
   </footer>
   <a class="back-to-top" href="#" aria-label="Back to top" title="Back to top">↑</a>
+  <dialog class="card-dialog" aria-labelledby="card-dialog-title">
+    <div class="card-dialog-header"><h2 id="card-dialog-title">TerpsiXorians information cards</h2><form method="dialog"><button autofocus>Close</button></form></div>
+    <img class="card-dialog-image" alt="">
+    <div class="card-dialog-controls"><button type="button" data-card-step="-1" aria-label="Previous card">← Previous</button><p class="card-dialog-count" aria-live="polite"></p><button type="button" data-card-step="1" aria-label="Next card">Next →</button></div>
+  </dialog>
+  <script>
+    (() => {
+      const links = [...document.querySelectorAll('.contact-card')];
+      const dialog = document.querySelector('.card-dialog');
+      const image = dialog.querySelector('.card-dialog-image');
+      const count = dialog.querySelector('.card-dialog-count');
+      let current = 0;
+      let originalOverflow;
+      function showCard(index) {
+        current = (index + links.length) % links.length;
+        image.src = links[current].href;
+        image.alt = links[current].querySelector('img').alt;
+        count.textContent = (current + 1) + ' / ' + links.length;
+      }
+      links.forEach((link, index) => {
+        link.addEventListener('click', event => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          showCard(index);
+          originalOverflow = document.body.style.overflow;
+          document.body.style.overflow = 'hidden';
+          dialog.showModal();
+        });
+      });
+      dialog.querySelectorAll('[data-card-step]').forEach(button => {
+        button.addEventListener('click', () => showCard(current + Number(button.dataset.cardStep)));
+      });
+      dialog.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          showCard(current + (event.key === 'ArrowRight' ? 1 : -1));
+        }
+      });
+      dialog.addEventListener('close', () => { document.body.style.overflow = originalOverflow; });
+      let touchStart;
+      image.addEventListener('touchstart', event => { touchStart = event.touches[0].clientX; }, { passive: true });
+      image.addEventListener('touchend', event => {
+        const distance = event.changedTouches[0].clientX - touchStart;
+        if (Math.abs(distance) > 60) showCard(current + (distance < 0 ? 1 : -1));
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
+
